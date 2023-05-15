@@ -5,4 +5,8 @@ WHU开源资料
 2. 科目名称
 3. 资料内容
 
-每个资料需要包含一个README，请自行建立文件夹  
+每个资料需要包含一个README，请自行建立文件夹。  
+# Contributor  
+<a href="https://github.com/WHUCodingAndOpen/OpenWHU/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=WHUCodingAndOpen/OpenWHU" />
+</a>
