@@ -7,6 +7,6 @@ WHU开源资料
 
 每个资料需要包含一个README，请自行建立文件夹。  
 # Contributor  
-<a href="https://github.com/WHUCodingAndOpen/OpenWHU/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=WHUCodingAndOpen/OpenWHU" />
+<a href="https://github.com/WhuCodingAndOpen/OpenWhu/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=WhuCodingAndOpen/OpenWhu" />
 </a>
