@@ -8,6 +8,6 @@ WHU开源资料
 本Repo存储的是共享资料，其大多为例年试卷、PPT等。如果你在寻找WHU CAO的个人整理资料，请在其他独立仓库中寻找。  
 每个资料需要包含一个README，请自行建立文件夹。  
 # Contributor  
-<a href="https://github.com/WhuCodingAndOpen/OpenWhu/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=WhuCodingAndOpen/OpenWhu" />
+<a href="https://github.com/WhUCodingandopen/openwhu/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=WhuCodingandopen/openwhu" />
 </a>
