@@ -1,0 +1,4 @@
+<RCC>
+    <qresource prefix="/PMIS"/>
+    <qresource prefix="/"/>
+</RCC>
