@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/png">
+        <file>Resources/image.png</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>Resources/Windowicon.png</file>
+    </qresource>
+    <qresource prefix="/jpg">
+        <file>Resources/RoomTypeA.jpg</file>
+        <file>Resources/RoomTypeB.jpg</file>
+        <file>Resources/buildingimage.jpg</file>
+        <file>Resources/buildingimage2.jpg</file>
+    </qresource>
+</RCC>
