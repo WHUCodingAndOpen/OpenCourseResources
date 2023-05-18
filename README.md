@@ -28,5 +28,5 @@ WHU开源资料。
 
 # Contributor  
 <a href="https://github.com/WhUCodingandopen/openwhu/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=WhuCodingandopen/openwhu" />
+  <img src="https://contrib.rocks/image?repo=WhuCodingandopen/openwhU" />
 </a>
