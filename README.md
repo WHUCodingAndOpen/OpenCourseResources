@@ -27,6 +27,12 @@ QQ交流群：728342352
 
 此外，请不要添加任何个人联系方式。
 
+# 赞助我们(请备注网名)
+
+![wx](.\static\wx.jpg)
+
+![ali](.\static\ali.jpg)
+
 # Contributor  
 <a href="https://github.com/WhUCodingandopen/openwhu/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=WhuCodingandopen/openwhU" />
