@@ -1,0 +1,49 @@
+module test (
+    input [15:0]sw_i,
+    output[6:0] disp_seg_o,
+    output[7:0] disp_an_o,
+    input BTNC,
+    input wire clk
+);
+    parameter div_para= 24;
+    reg [31:0] count;
+    reg [6:0] tmp;
+    reg [3:0] cnt;
+    wire clk_29;
+
+    always @(posedge clk ) begin
+        if(BTNC) begin count <= 0; end;
+        if (sw_i[0]) begin count <= count + 1; end
+    end
+    assign disp_an_o = 8'b11111110;
+    assign clk_29 = count[div_para];
+    always @(posedge clk_29 ) begin
+        if(BTNC) cnt = 4'b0000;
+        else if(sw_i[15])  begin tmp=8'b11111111; cnt=4'b0000; end 
+        else
+        begin
+            
+            case(cnt)
+               4'b0000:tmp=8'b11000000;
+                4'b0001:tmp=8'b11111001;
+                4'b0010:tmp=8'b10100100;
+                4'b0011:tmp=8'b10110000;
+                4'b0100:tmp=8'b10011001;
+                4'b0101:tmp=8'b10010010;
+                4'b0110:tmp=8'b10000010;
+                4'b0111:tmp=8'b11111000;
+                4'b1000:tmp=8'b10000000;
+                4'b1001: tmp=8'b10010000; 
+                //以下为无效状态
+                default: begin  cnt= 4'b0000; 
+					tmp=8'b11000000;end
+								
+                
+               
+            endcase
+             cnt = cnt + 1;
+        end
+    end
+    assign disp_seg_o = tmp;
+endmodule
+//依据老师要求改为了共阳极编码且屏蔽了小数点，修复了计数时跳过0的bug，加入了使能控制swi15,rstn按钮改为了btnc
