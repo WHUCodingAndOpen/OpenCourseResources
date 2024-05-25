@@ -1,0 +1,26 @@
+module test (
+    input [15:0]sw_i,
+    output[6:0] disp_seg_o,
+    output[7:0] disp_an_o);
+    reg [6:0] tmp;
+    assign disp_an_o = 8'b11111110;
+    always @(*) 
+        begin
+            case(sw_i[4:1])
+                4'b0000:tmp=8'b11000000;
+                4'b0001:tmp=8'b11111001;
+                4'b0010:tmp=8'b10100100;
+                4'b0011:tmp=8'b10110000;
+                4'b0100:tmp=8'b10011001;
+                4'b0101:tmp=8'b10010010;
+                4'b0110:tmp=8'b10000010;
+                4'b0111:tmp=8'b11111000;
+                4'b1000:tmp=8'b10000000;
+                4'b1001: tmp=8'b10010000;  
+                //以下为无效状态
+                default: tmp= 8'b11111111;
+               
+            endcase
+        end
+    assign disp_seg_o = tmp;
+endmodule

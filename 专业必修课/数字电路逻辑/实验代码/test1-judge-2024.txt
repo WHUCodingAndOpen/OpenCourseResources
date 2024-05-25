@@ -1,0 +1,5 @@
+module test(input [15:0]sw_i,output [15:0]led_o);
+and a1(t1,sw_i[0],sw_i[1])
+   ,a2(t2,sw_i[0],sw_i[2]);
+or  f(led_o[15],t1,t2);
+endmodule

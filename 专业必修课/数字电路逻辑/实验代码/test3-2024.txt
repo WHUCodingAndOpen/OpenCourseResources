@@ -1,0 +1,56 @@
+//101序列检测器
+
+module detector_101 (
+    input clk,
+    input rstn,
+    input d,
+    output reg q
+);
+    reg [1:0] state, next_state;
+    localparam S0 = 2'b00;
+    localparam S1 = 2'b01;
+    localparam S2 = 2'b10;
+    //用于计算次态
+    always @(*) begin
+        next_state[1] <= !state[1] && state[0] && !d;
+        next_state[0] <= !state[0] && d; 
+    end
+    //实现状态转换
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn)
+            state <= S0;
+        else
+            state <= next_state;
+    end
+    //用于计算次态
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn)
+            q <= 0;
+        else
+            q <= state[1] && !state[0] && d;
+    end
+endmodule
+
+module sequence_detector_101_top (
+    input wire clk,
+    input wire BTNC,
+    input wire rstn,
+    input wire [1:0] sw_i,
+    output wire [1:0] led_o
+);
+
+    wire dclk;
+    wire d, q;
+    wire light;
+    assign dff_clk = BTNC;
+    assign d = sw_i[0];
+    detector_101 detector (
+        .clk(dclk),
+        .rstn(rstn),
+        .d(d),
+        .q(light)
+    );
+
+    assign led_o[0] = (light == 1);
+endmodule
+//vks更新

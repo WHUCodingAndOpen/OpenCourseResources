@@ -1,0 +1,13 @@
+//1.输入为4位BCD码，当电路检测到输入的代码大于3时，电路的输出F1=1，其它情况F1=0。当输入的代码小于7时，电路的另一个输出F2=1，其它情况F2=0。
+
+module test(input [15:0]sw_i,output [15:0]led_o);
+wire t1,t2;
+reg ledstate;
+  or a1(led_o[15],sw_i[3],sw_i[2])
+  ,a2(t1,sw_i[3],!sw_i[2])//a+!b
+  ,a3(t2,!sw_i[1],!sw_i[0])//!c+!d
+  ,a4(t3,t1,t2)
+  ,a5(t4,!sw_i[3],sw_i[2])
+  ,a6(t5,t4,sw_i[1]);//!a+b+c
+  and f2(led_o[14],t3,t5);
+endmodule
