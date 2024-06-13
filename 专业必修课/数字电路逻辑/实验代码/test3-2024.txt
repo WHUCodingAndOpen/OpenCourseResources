@@ -1,5 +1,15 @@
 //101序列检测器
 
+module DFF (
+    input clk,
+    input d,
+    output reg q
+);
+    always @(posedge clk) begin
+        q <= d;
+    end
+endmodule
+
 module detector_101 (
     input clk,
     input rstn,
@@ -39,13 +49,21 @@ module sequence_detector_101_top (
     output wire [1:0] led_o
 );
 
-    wire dclk;
+    wire dff_clk;
     wire d, q;
     wire light;
+
     assign dff_clk = BTNC;
     assign d = sw_i[0];
+
+    DFF mydff(
+        .clk(dff_clk),
+        .d(d),
+        .q(q)
+    );
+
     detector_101 detector (
-        .clk(dclk),
+        .clk(dff_clk),
         .rstn(rstn),
         .d(d),
         .q(light)
