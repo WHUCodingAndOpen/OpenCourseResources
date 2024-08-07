@@ -31,9 +31,3 @@ QQ交流群：728342352
 <a href="https://github.com/WhUCodingandopen/openwhu/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=WhuCodingandopen/openwhU" />
 </a>
-
-# 赞助我们(请备注网名)
-
-![wx](./static/wx.jpg)
-
-![ali](./static/ali.jpg)
