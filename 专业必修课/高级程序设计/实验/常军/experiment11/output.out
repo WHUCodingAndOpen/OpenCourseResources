@@ -1,0 +1,70 @@
+int i = 53;
+float f = 470013.141593;
+T.setf(ios::unitbuf);
+T.setf(ios::showbase);
+T.setf(ios::uppercase);
+T.setf(ios::showpos);
+T << i << endl;
++53
+T.setf(ios::hex, ios::basefield);
+T << i << endl;
+0X35
+T.unsetf(ios::uppercase);
+T.setf(ios::oct, ios::basefield);
+T << i << endl;
+065
+T.unsetf(ios::showbase);
+T.setf(ios::dec, ios::basefield);
+T.setf(ios::left, ios::adjustfield);
+T.fill('0');
+T << "fill char:" << T.fill() << endl;
+fill char:0
+T.width(8);
++5300000
+T.setf(ios::right, ios::adjustfield);
+T.width(8);
+00000+53
+T.setf(ios::internal, ios::adjustfield);
+T.width(8);
++0000053
+T << i << endl;
++53
+T.unsetf(ios::showpos);
+T.setf(ios::showpoint);
+T << "prec=" << T.precision() << endl;
+prec=6
+T.setf(ios::scientific, ios::floatfield);
+T << endl << f << endl;
+
+4.700132e+05
+T.setf(ios::fixed, ios::floatfield);
+T << f << endl;
+470013.156250
+T.setf(ios_base::fmtflags(0), ios::floatfield);
+T << f << endl;
+470013.
+T.precision(16);
+T << "prec=" << T.precision() << endl;
+prec=16
+T << endl << f << endl;
+
+470013.1562500000
+T.setf(ios::scientific, ios::floatfield);
+T << endl << f << endl;
+
+4.7001315625000000e+05
+T.setf(ios::fixed, ios::floatfield);
+T << f << endl;
+470013.1562500000000000
+T.setf(ios_base::fmtflags(0), ios::floatfield);
+T << f << endl;
+470013.1562500000
+T.width(8);
+Is there any more?
+T.width(36);
+000000000000000000Is there any more?
+T.setf(ios::left, ios::adjustfield);
+T.width(36);
+Is there any more?000000000000000000
+T.unsetf(ios::showpoint);
+T.unsetf(ios::unitbuf);
